@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    Environment {
+    environment {
         pastaWS = '$WORKSPACE/prova_ec2-jenkins-Rafael_Carvalho_E_Lima/ProvaN22_appfast'
     }
     stages {
