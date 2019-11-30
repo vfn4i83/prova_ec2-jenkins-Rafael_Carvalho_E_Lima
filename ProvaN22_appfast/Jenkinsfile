@@ -1,17 +1,15 @@
 pipeline {
     agent any
     environment {
-//        pastaWS = "$WORKSPACE/prova_ec2-jenkins-Rafael_Carvalho_E_Lima/ProvaN22_appfast"
-        pastaWS = "$WORKSPACE/ProvaN22_appfast"
+        pastaWS = "$WORKSPACE/prova_ec2-jenkins-Rafael_Carvalho_E_Lima/ProvaN22_appfast"
     }
     stages {
         stage('Preparando area de trabalho') {
             steps {
                 echo 'preparando Wrapper'
-                echo "$pastaWS"
+                echo '$pastaWS'
                 dir("pastaWS") {
-
-                    sh './gradlew'
+                    sh '$pastaWS/gradle wrapper'
                 }
             }
         }
